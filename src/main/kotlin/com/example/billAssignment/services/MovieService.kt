@@ -44,7 +44,7 @@ class MovieService(val movieDb: MovieRepository, val actorDb: ActorRepository, v
 
     fun saveMovie(movieWhole: MovieWhole) {
 
-        if (movieWhole.actors.isEmpty()) {
+        if (movieWhole.actors.isEmpty() || movieWhole.title.isEmpty() || movieWhole.releasedate.isEmpty()) {
             throw IllegalArgumentException("missing data")
         }
 
